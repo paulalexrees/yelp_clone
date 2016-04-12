@@ -3,9 +3,17 @@
 - else
   - @restaurants.each do |rest|
     =link_to rest.name, restaurant_path(rest)
+    Reviews:
+    - if rest.reviews.any?
+      %ul
+        -rest.reviews.each do |review|
+          %li
+            =review.thoughts
+            %strong= review.rating
+            \/5
+    - else
+      %p No reviews
     =link_to "Edit #{rest.name}", edit_restaurant_path(rest)
     =link_to "Delete #{rest.name}", restaurant_path(rest), method: :delete
     =link_to "Review #{rest.name}", new_restaurant_review_path(rest)
-
-
 %a(href='/restaurants/new') Add a restaurant
