@@ -13,7 +13,7 @@ feature 'resturants' do
     before do
       Restaurant.create(name:'KFC')
     end
-    
+
     scenario 'display restaurants' do
       visit '/restaurants'
       expect(page).to have_content('KFC')
