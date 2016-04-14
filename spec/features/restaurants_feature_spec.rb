@@ -1,6 +1,10 @@
 require 'rails_helper'
+require_relative 'web_helpers'
 
 feature 'restaurants' do
+
+  before(:each) { sign_up }
+
   context 'no restaurants have been added' do
     scenario 'should display a prompt to add a restaurant' do
       visit '/restaurants'

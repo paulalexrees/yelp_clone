@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 feature 'reviewing' do
+  before(:each) { sign_up }
   let!(:kfc) { Restaurant.create name: 'KFC' }
 
   context 'writing a review' do
