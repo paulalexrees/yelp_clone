@@ -67,6 +67,12 @@ feature 'restaurants' do
       expect(page).to have_content 'Kentucky Fried Chicken'
       expect(current_path).to eq '/restaurants'
     end
+
+    scenario 'users can only edit their own restaurants' do
+      click_link 'Sign out'
+      sign_up(email: 'yomama@yomama.com')
+      expect(page).not_to have_link 'Edit KFC'
+    end
   end
 
   context 'deleting restaurants' do
