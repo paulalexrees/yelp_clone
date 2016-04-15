@@ -4,6 +4,7 @@ gem 'haml'
 gem 'shoulda'
 gem 'omniauth-facebook'
 gem 'paperclip'
+gem 'aws-sdk'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
