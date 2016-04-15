@@ -119,6 +119,14 @@ feature "restaurants" do
     end
   end
 
+  context 'vewing images' do
+    scenario 'displays images of restaurant' do
+    sign_up
+    create_restaurant
+    expect(page).to have_xpath("//img[contains(@src,'images.jpg')]")
+  end
+end
+
 
 
 end

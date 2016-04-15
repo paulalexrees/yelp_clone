@@ -20,6 +20,7 @@ def create_restaurant
   visit '/restaurants'
   click_link 'Add a restaurant'
   fill_in 'Name', with: 'KFC'
+  attach_file 'restaurant[image]', "spec/asset_specs/photos/images.jpg"
   click_button 'Create Restaurant'
 end
 
